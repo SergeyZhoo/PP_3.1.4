@@ -28,18 +28,17 @@ public class Util implements CommandLineRunner {
         roleRepository.save(roleAdmin);
         roleRepository.save(roleUser);
         adminRoles.add(roleAdmin);
-        adminRoles.add(roleUser);
         userRoles.add(roleUser);
 
-        User userAdmin = new User("Admin", "Admin", (byte) 13, "admin@admin", "$2a$12$M2nesl.f4c2YXOiWnHvR4Opk3UjJHeFnIHiyizfnfAuMhkG8QX25q", adminRoles);
-        User userUser = new User("User", "User", (byte) 25, "user@user", "$2a$12$/5c/g2pbdwF3f8lxyFMQuOJ3tZYGTlBSsaovDZzp4h7sM1mQroZFm", userRoles);
+        User userAdmin = new User("Admin", "Admin", (byte) 13, "admin", "$2a$12$M2nesl.f4c2YXOiWnHvR4Opk3UjJHeFnIHiyizfnfAuMhkG8QX25q", adminRoles);
+        User userUser = new User("User", "User", (byte) 25, "user", "$2a$12$/5c/g2pbdwF3f8lxyFMQuOJ3tZYGTlBSsaovDZzp4h7sM1mQroZFm", userRoles);
 
         System.out.println(userAdmin);
         userRepository.save(userAdmin);
         System.out.println(userUser);
         userRepository.save(userUser);
 
-        System.out.println(userAdmin);
-        System.out.println(userUser);
+        System.out.println(userAdmin.getRoles());
+        System.out.println(userUser.getRoles());
     }
 }

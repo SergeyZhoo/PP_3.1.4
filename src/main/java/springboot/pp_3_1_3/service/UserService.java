@@ -1,21 +1,23 @@
 package springboot.pp_3_1_3.service;
 
 
-import org.springframework.stereotype.Service;
+
+import springboot.pp_3_1_3.entity.Role;
 import springboot.pp_3_1_3.entity.User;
 import java.util.List;
+import java.util.Set;
 
 public interface UserService {
 
-    List<User> getAllUsers();
+    List<User> findAll();
 
-    User getUser(Long id);
+    User findOne(int id);
 
     void saveUser(User user);
 
-    void updateUser(User user);
+    void update(Long id, User updatedUser);
 
-    void deleteUser(Long id);
+    void deleteUser(int id);
 
-    User findByUsername(String username);
+    Set<Role> getRole();
 }

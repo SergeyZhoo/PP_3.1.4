@@ -16,7 +16,7 @@
             <span class="navbar-brand mb-0">
                 <span style="font-weight: bold" th:text="${currentUser.getUsername()}"></span> with roles:
                 <span th:each="role : ${currentUser.getRoles()}">
-                    <span th:text="${role.getName().replace('ROLE_', '')}"></span>
+                    <span th:text="${role.getRole().replace('ROLE_', '')}"></span>
                 </span>
             </span>
     <a href="/logout" class="btn text-white-50" role="button" aria-pressed="true">Logout</a>
